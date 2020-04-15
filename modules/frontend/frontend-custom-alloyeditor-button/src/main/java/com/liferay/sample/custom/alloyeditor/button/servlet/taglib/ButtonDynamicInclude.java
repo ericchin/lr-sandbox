@@ -34,7 +34,7 @@ public class ButtonDynamicInclude extends BaseDynamicInclude {
 		ScriptData scriptData = new ScriptData();
 
 		String buttonsCollection = _npmResolver.resolveModuleName(
-			"custom-alloyeditor-button/js/main");
+			"frontend-custom-alloyeditor-button/js/main");
 
 		scriptData.append(
 			null, "", buttonsCollection, ScriptData.ModulesType.ES6);
@@ -53,7 +53,7 @@ public class ButtonDynamicInclude extends BaseDynamicInclude {
 	private Portal _portal;
 
 	@Reference(
-		target = "(osgi.web.symbolicname=com.liferay.sample.custom.alloyeditor.button)"
+		target = "(osgi.web.symbolicname=com.liferay.frontend.alloyeditor.button)"
 	)
 	private ServletContext _servletContext;
 

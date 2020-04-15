@@ -1,5 +1,0 @@
-Bundle-Name: custom-alloyeditor-button
-Bundle-SymbolicName: com.liferay.sample.custom.alloyeditor.button
-Bundle-Version: 1.0.0
-Web-ContextPath: /custom-alloyeditor-button
--includeresource: META-INF/resources=build/node/packageRunBuild/resources
