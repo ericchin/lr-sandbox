@@ -1,0 +1,37 @@
+{
+	"exclude": {
+		"*": [
+			"**/alloy-editor-all.js",
+			"**/alloy-editor-all-min.js",
+			"**/alloy-editor-core.js",
+			"**/alloy-editor-core-min.js",
+			"**/alloy-editor-no-ckeditor.js",
+			"**/alloy-editor-no-ckeditor-min.js",
+			"**/alloyeditor.js",
+			"**/alloyeditor_source.js",
+			"**/ckeditor.js",
+			"**/config.js",
+			"**/editor_image_uploader.js",
+			"**/src/**/*",
+			"**/scheduler*.js",
+			"**/react-is*.js"
+		],
+		"clay-css": [
+			"**/js/*.js",
+			"src/*",
+			"lib/*"
+		],
+		"scheduler": ["**/*.js"]
+	},
+	"ignore": [
+		"**/alloy-editor-*.js",
+		"**/alloyeditor.js",
+		"**/alloyeditor_source.js",
+		"**/ckeditor.js",
+		"**/config.js",
+		"**/editor_image_uploader.js",
+		"**/clay-css/*",
+		"**/src/**/*"
+	],
+	"verbose": true
+}
