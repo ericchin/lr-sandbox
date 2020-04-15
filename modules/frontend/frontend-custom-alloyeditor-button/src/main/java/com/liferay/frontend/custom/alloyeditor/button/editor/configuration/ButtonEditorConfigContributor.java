@@ -1,4 +1,4 @@
-package com.liferay.sample.custom.alloyeditor.button.editor.configuration;
+package com.liferay.frontend.custom.alloyeditor.button.editor.configuration;
 
 import com.liferay.portal.kernel.editor.configuration.BaseEditorConfigContributor;
 import com.liferay.portal.kernel.editor.configuration.EditorConfigContributor;

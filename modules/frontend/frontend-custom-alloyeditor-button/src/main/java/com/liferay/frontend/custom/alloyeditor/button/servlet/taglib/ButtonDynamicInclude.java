@@ -1,4 +1,4 @@
-package com.liferay.sample.custom.alloyeditor.button.servlet.taglib;
+package com.liferay.frontend.custom.alloyeditor.button.servlet.taglib;
 
 import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 import com.liferay.portal.kernel.servlet.taglib.BaseDynamicInclude;
