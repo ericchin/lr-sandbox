@@ -2,7 +2,7 @@
 	"dependencies": {
 		"alloyeditor": "2.11.1"
 	},
-	"name": "custom-alloyeditor-button",
+	"name": "frontend-custom-alloyeditor-button",
 	"scripts": {
 		"build": "liferay-npm-scripts build",
 		"checkFormat": "liferay-npm-scripts check",
