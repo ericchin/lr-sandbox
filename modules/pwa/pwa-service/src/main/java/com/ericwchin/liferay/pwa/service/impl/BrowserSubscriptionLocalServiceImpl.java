@@ -14,8 +14,15 @@
 
 package com.ericwchin.liferay.pwa.service.impl;
 
+import com.ericwchin.liferay.pwa.model.BrowserSubscription;
 import com.ericwchin.liferay.pwa.service.base.BrowserSubscriptionLocalServiceBaseImpl;
+
 import com.liferay.portal.aop.AopService;
+import com.liferay.portal.kernel.model.User;
+import com.liferay.portal.kernel.service.ServiceContext;
+
+import java.util.Date;
+import java.util.Objects;
 
 import org.osgi.service.component.annotations.Component;
 
@@ -44,4 +51,39 @@ public class BrowserSubscriptionLocalServiceImpl
 	 *
 	 * Never reference this class directly. Use <code>com.ericwchin.liferay.pwa.service.BrowserSubscriptionLocalService</code> via injection or a <code>org.osgi.util.tracker.ServiceTracker</code> or use <code>com.ericwchin.liferay.pwa.service.BrowserSubscriptionLocalServiceUtil</code>.
 	 */
+
+	public BrowserSubscription addSubscription(
+		String auth, String key, String endpoint,
+		ServiceContext serviceContext) {
+
+		long subscriptionId = counterLocalService.increment(
+			BrowserSubscription.class.getName());
+
+		BrowserSubscription browserSubscription =
+			browserSubscriptionPersistence.create(subscriptionId);
+
+		long userId = serviceContext.getUserId();
+
+		User user = userLocalService.fetchUser(userId);
+
+		if (Objects.nonNull(user)) {
+			browserSubscription.setUserId(user.getUserId());
+			browserSubscription.setUserName(user.getFullName());
+		}
+
+		browserSubscription.setCompanyId(serviceContext.getCompanyId());
+		browserSubscription.setGroupId(serviceContext.getScopeGroupId());
+
+		Date date = new Date();
+
+		browserSubscription.setCreateDate(date);
+		browserSubscription.setModifiedDate(date);
+
+		browserSubscription.setAuth(auth);
+		browserSubscription.setKey(key);
+		browserSubscription.setEndpoint(endpoint);
+
+		return browserSubscriptionPersistence.update(browserSubscription);
+	}
+
 }
