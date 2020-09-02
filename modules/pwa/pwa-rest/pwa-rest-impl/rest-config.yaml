@@ -1,0 +1,9 @@
+apiDir: "../pwa-rest-api/src/main/java"
+apiPackagePath: "com.ericwchin.liferay.pwa.rest"
+application:
+    baseURI: "/pwa-rest"
+    className: "PWAApplication"
+    name: "PWA"
+author: "Eric Chin"
+clientDir: "../pwa-rest-client/src/main/java"
+testDir: "../pwa-rest-test/src/testIntegration/java"

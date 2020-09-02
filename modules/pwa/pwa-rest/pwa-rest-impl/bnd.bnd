@@ -1,0 +1,3 @@
+Bundle-Name: pwa-rest-impl
+Bundle-SymbolicName: com.ericwchin.liferay.pwa.rest.impl
+Bundle-Version: 1.0.0

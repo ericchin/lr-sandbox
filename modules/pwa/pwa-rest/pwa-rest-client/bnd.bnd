@@ -1,0 +1,3 @@
+Bundle-Name: pwa-rest-client
+Bundle-SymbolicName: com.ericwchin.liferay.pwa.rest.client
+Bundle-Version: 1.0.0

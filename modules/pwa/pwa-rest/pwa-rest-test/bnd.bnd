@@ -1,0 +1,5 @@
+Bundle-Name: pwa-rest-test
+Bundle-SymbolicName: com.ericwchin.liferay.pwa.rest.test
+Bundle-Version: 1.0.0
+-includeresource: \
+	com.ericwchin.liferay.pwa.rest.client.jar=../pwa-rest-client/build/libs/com.ericwchin.liferay.pwa.rest.client-1.0.0.jar;lib:=true

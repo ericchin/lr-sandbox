@@ -1,0 +1,44 @@
+info:
+  description: "PWA REST API"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+  title: "PWA"
+  version: 1.0.0
+openapi: "3.0.1"
+paths:
+  /subscribe:
+    post:
+      summary: Subscribe browser
+      parameters:
+        - name: data
+          in: query
+          description: Request data
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: Null response
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  schemas:
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

@@ -1,0 +1,5 @@
+Bundle-Name: pwa-rest-api
+Bundle-SymbolicName: com.ericwchin.liferay.pwa.rest.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.ericwchin.liferay.pwa.rest.dto.v1_0_0
