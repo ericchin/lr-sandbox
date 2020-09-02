@@ -1,0 +1,10 @@
+Bundle-Name: liferay-pwa-api
+Bundle-SymbolicName: com.ericwchin.liferay.pwa.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.ericwchin.liferay.pwa.exception,\
+	com.ericwchin.liferay.pwa.model,\
+	com.ericwchin.liferay.pwa.service,\
+	com.ericwchin.liferay.pwa.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../pwa-service/service.xml

@@ -1,0 +1,6 @@
+Bundle-Name: liferay-pwa-service
+Bundle-SymbolicName: com.ericwchin.liferay.pwa.service
+Bundle-Version: 1.0.0
+Liferay-Require-SchemaVersion: 1.0.0
+Liferay-Service: true
+-dsannotations-options: inherit
