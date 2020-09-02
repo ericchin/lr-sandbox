@@ -1,13 +1,21 @@
 package com.ericwchin.liferay.pwa.rest.internal.resource.v1_0_0;
 
 import com.ericwchin.liferay.pwa.service.BrowserSubscriptionLocalService;
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.json.JSONException;
+import com.liferay.portal.kernel.json.JSONFactoryUtil;
+import com.liferay.portal.kernel.json.JSONObject;
+import com.liferay.portal.kernel.service.ServiceContext;
+import com.liferay.portal.kernel.service.ServiceContextFactory;
 import com.liferay.portal.vulcan.resource.OpenAPIResource;
 
 import java.util.HashSet;
 import java.util.Set;
 
 import javax.annotation.Generated;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -56,6 +64,31 @@ public class OpenAPIResourceImpl {
 		}
 
 		return _openAPIResource.getOpenAPI(_resourceClasses, type, _uriInfo);
+	}
+
+	@POST
+	@Path("/subscribe")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response subscribe(
+		@Context HttpServletRequest request, String data) {
+
+		try {
+			ServiceContext serviceContext = ServiceContextFactory.getInstance(
+				request);
+
+			JSONObject dataObj = JSONFactoryUtil.createJSONObject(data);
+			JSONObject subscriptionObj = dataObj.getJSONObject("data");
+			JSONObject keysObj = subscriptionObj.getJSONObject("keys");
+
+			_browserSubscriptionLocalService.addSubscription(
+				keysObj.getString("p256dh"), keysObj.getString("auth"),
+				subscriptionObj.getString("endpoint"), serviceContext);
+		}
+		catch (PortalException pe) {
+			return Response.status(Response.Status.BAD_REQUEST).build();
+		}
+
+		return Response.ok().build();
 	}
 
 	@Reference
