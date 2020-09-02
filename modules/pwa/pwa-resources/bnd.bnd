@@ -1,4 +1,4 @@
-Bundle-Name: com.ericwchin.liferay.pwa
-Bundle-SymbolicName: liferay-pwa
+Bundle-Name: liferay-pwa-resources
+Bundle-SymbolicName: com.ericwchin.liferay.pwa
 Bundle-Version: 1.0.0
 Web-ContextPath: /liferay-pwa
