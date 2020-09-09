@@ -309,6 +309,21 @@ public class BrowserSubscriptionLocalServiceWrapper
 			primaryKeyObj);
 	}
 
+	@Override
+	public java.util.List<com.ericwchin.liferay.pwa.model.BrowserSubscription>
+		getSubscriptionsByGroup(long groupId) {
+
+		return _browserSubscriptionLocalService.getSubscriptionsByGroup(
+			groupId);
+	}
+
+	@Override
+	public java.util.List<com.ericwchin.liferay.pwa.model.BrowserSubscription>
+		getSubscriptionsByUser(long userId) {
+
+		return _browserSubscriptionLocalService.getSubscriptionsByUser(userId);
+	}
+
 	/**
 	 * Updates the browser subscription in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
 	 *

@@ -254,6 +254,12 @@ public interface BrowserSubscriptionLocalService
 	public PersistedModel getPersistedModel(Serializable primaryKeyObj)
 		throws PortalException;
 
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public List<BrowserSubscription> getSubscriptionsByGroup(long groupId);
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public List<BrowserSubscription> getSubscriptionsByUser(long userId);
+
 	/**
 	 * Updates the browser subscription in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
 	 *
