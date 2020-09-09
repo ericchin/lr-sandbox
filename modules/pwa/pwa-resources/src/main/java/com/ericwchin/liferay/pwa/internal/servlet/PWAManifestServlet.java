@@ -1,8 +1,7 @@
-package com.ericwchin.liferay.pwa.servlet;
+package com.ericwchin.liferay.pwa.internal.servlet;
 
-import com.ericwchin.liferay.pwa.util.PWAHelper;
+import com.ericwchin.liferay.pwa.internal.util.PWAHelper;
 import com.liferay.portal.kernel.util.ContentTypes;
-import com.liferay.portal.kernel.util.MimeTypesUtil;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

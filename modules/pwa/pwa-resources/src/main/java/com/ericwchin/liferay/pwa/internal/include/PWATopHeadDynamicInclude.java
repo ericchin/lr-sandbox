@@ -1,4 +1,4 @@
-package com.ericwchin.liferay.pwa.dynamic.include;
+package com.ericwchin.liferay.pwa.internal.include;
 
 import com.liferay.portal.kernel.servlet.taglib.DynamicInclude;
 import com.liferay.portal.kernel.util.StringBundler;

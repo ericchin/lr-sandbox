@@ -1,4 +1,4 @@
-package com.ericwchin.liferay.pwa.filter;
+package com.ericwchin.liferay.pwa.internal.filter;
 
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
