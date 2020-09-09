@@ -2,3 +2,23 @@ Bundle-Name: liferay-pwa-resources
 Bundle-SymbolicName: com.ericwchin.liferay.pwa
 Bundle-Version: 1.0.0
 Web-ContextPath: /liferay-pwa
+Export-Package: \
+	com.ericwchin.liferay.pwa.configuration,\
+	com.ericwchin.liferay.pwa.helper,\
+	nl.martijndwars.webpush
+Import-Package: \
+	!junit.*,\
+	\
+	!org.apache.axis.*,\
+	!org.apache.avalon.*,\
+	!org.apache.commons.configuration,\
+	!org.apache.commons.ssl,\
+	!org.apache.log.*,\
+	!org.apache.oro.*,\
+	!org.apache.poi.*,\
+	!org.apache.tools.ant.*,\
+	\
+	!org.slf4j.*,\
+	\
+	*
+-fixupmessages "Classes found in the wrong directory"; restrict:=error; is:=warning
