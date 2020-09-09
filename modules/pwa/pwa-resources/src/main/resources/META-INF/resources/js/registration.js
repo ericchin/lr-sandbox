@@ -10,8 +10,6 @@ $(function() {
 		return outputArray
 	}
 
-	const applicationServerKey = '';
-
 	const config = {
 		userVisibleOnly: true,
 		applicationServerKey: urlB64ToUint8Array(applicationServerKey)
@@ -32,14 +30,40 @@ $(function() {
 		});
 
 		navigator.serviceWorker.ready.then(function(reg) {
-			reg.pushManager.subscribe(config).then(function(subscription) {
-				console.log('KEY:: ' + JSON.stringify(subscription));
-				console.log('ENDPOINT:: ' + subscription.endpoint);
+			if (!themeDisplay.isSignedIn()) {
+				return;
+			}
 
-				// At this point you would most likely send the subscription
-				// endpoint to your server, save it, then use it to send a
-				// push message at a later date
-			})
+			reg.pushManager.getSubscription().then(function(subscription) {
+				if (!subscription) {
+					Notification.requestPermission().then(function(permission) {
+						if (permission === 'granted') {
+							reg.pushManager.subscribe(config).then(function(subscription) {
+								const url = '/o/pwa-rest/1.0.0/subscribe?p_auth=' + Liferay.authToken;
+
+								const key = subscription.getKey ? subscription.getKey('p256dh') : '';
+								const auth = subscription.getKey ? subscription.getKey('auth') : '';
+
+								fetch(url, {
+									method: 'POST',
+									mode: 'cors',
+									cache: 'no-cache',
+									credentials: 'same-origin',
+									redirect: 'follow',
+									referrerPolicy: 'no-referrer',
+									body: JSON.stringify({
+										data: {
+											endpoint: subscription.endpoint,
+											key: btoa(String.fromCharCode.apply(null, new Uint8Array(key))),
+											auth: btoa(String.fromCharCode.apply(null, new Uint8Array(auth)))
+										}
+									})
+								});
+							});
+						}
+					});
+				}
+			});
 		});
 	}
 });
