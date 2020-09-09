@@ -6,7 +6,7 @@ create table PWA_BrowserSubscription (
 	userName VARCHAR(75) null,
 	createDate DATE null,
 	modifiedDate DATE null,
-	endpoint VARCHAR(200) null,
+	endpoint VARCHAR(2000) null,
 	auth VARCHAR(2000) null,
 	key_ VARCHAR(2000) null
 );

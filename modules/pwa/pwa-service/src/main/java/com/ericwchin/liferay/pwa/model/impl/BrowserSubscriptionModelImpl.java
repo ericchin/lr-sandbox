@@ -97,7 +97,7 @@ public class BrowserSubscriptionModelImpl
 	}
 
 	public static final String TABLE_SQL_CREATE =
-		"create table PWA_BrowserSubscription (browserSubscriptionId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,endpoint VARCHAR(200) null,auth VARCHAR(2000) null,key_ VARCHAR(2000) null)";
+		"create table PWA_BrowserSubscription (browserSubscriptionId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,endpoint VARCHAR(2000) null,auth VARCHAR(2000) null,key_ VARCHAR(2000) null)";
 
 	public static final String TABLE_SQL_DROP =
 		"drop table PWA_BrowserSubscription";

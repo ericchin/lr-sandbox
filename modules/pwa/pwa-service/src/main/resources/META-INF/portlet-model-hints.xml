@@ -10,7 +10,7 @@
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
 		<field name="endpoint" type="String">
-			<hint name="max-length">200</hint>
+			<hint name="max-length">2000</hint>
 		</field>
 		<field name="auth" type="String">
 			<hint name="max-length">2000</hint>
