@@ -2,7 +2,6 @@ package com.ericwchin.liferay.pwa.rest.internal.resource.v1_0_0;
 
 import com.ericwchin.liferay.pwa.service.BrowserSubscriptionLocalService;
 import com.liferay.portal.kernel.exception.PortalException;
-import com.liferay.portal.kernel.json.JSONException;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.service.ServiceContext;
@@ -78,10 +77,10 @@ public class OpenAPIResourceImpl {
 
 			JSONObject dataObj = JSONFactoryUtil.createJSONObject(data);
 			JSONObject subscriptionObj = dataObj.getJSONObject("data");
-			JSONObject keysObj = subscriptionObj.getJSONObject("keys");
 
 			_browserSubscriptionLocalService.addSubscription(
-				keysObj.getString("p256dh"), keysObj.getString("auth"),
+				subscriptionObj.getString("auth"),
+				subscriptionObj.getString("key"),
 				subscriptionObj.getString("endpoint"), serviceContext);
 		}
 		catch (PortalException pe) {

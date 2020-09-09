@@ -22,6 +22,7 @@ import com.liferay.portal.kernel.model.User;
 import com.liferay.portal.kernel.service.ServiceContext;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import org.osgi.service.component.annotations.Component;
@@ -84,6 +85,14 @@ public class BrowserSubscriptionLocalServiceImpl
 		browserSubscription.setEndpoint(endpoint);
 
 		return browserSubscriptionPersistence.update(browserSubscription);
+	}
+
+	public List<BrowserSubscription> getSubscriptionsByGroup(long groupId) {
+		return browserSubscriptionPersistence.findByGroupId(groupId);
+	}
+
+	public List<BrowserSubscription> getSubscriptionsByUser(long userId) {
+		return browserSubscriptionPersistence.findByUserId(userId);
 	}
 
 }
