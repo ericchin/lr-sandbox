@@ -24,10 +24,8 @@ public class PWAHelper {
 		manifestObj.put("scope", "/");
 		manifestObj.put("theme_color", "#3367D6");
 		manifestObj.put("orientation", "portrait");
-		manifestObj.put("applicationServerKey", _APP_SERVER_KEY);
 
 		JSONArray iconArray = JSONFactoryUtil.createJSONArray();
-
 		JSONObject iconObj = JSONFactoryUtil.createJSONObject();
 
 		iconObj.put("src", "/o/liferay-pwa/images/logo.svg");
@@ -40,10 +38,5 @@ public class PWAHelper {
 
 		return manifestObj.toString();
 	}
-
-	private static final String _APP_SERVER_KEY = "AAAAl9HkVK4" +
-		":APA91bEJEnIkC_R3mu0uQT3GQ2QsbggSCyqT3sFbur_qP" +
-		"-5HN9il7EhM8debxamm9pPd7kvNQberag9phpLN6isZZZpvs" +
-		"Rte4cE9QLUPznLNS1K1EtkYCxpX74-uaTQE94hjQrN8MErL";
 
 }
