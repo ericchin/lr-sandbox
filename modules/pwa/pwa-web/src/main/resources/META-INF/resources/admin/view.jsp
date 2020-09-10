@@ -22,12 +22,12 @@
 	>
 
 		<liferay-ui:search-container-column-text
-			name="browserSubscriptionId"
+			name="browser-subscription-id"
 			property="browserSubscriptionId"
 		/>
 
 		<liferay-ui:search-container-column-text
-			name="userName"
+			name="user-name"
 			property="userName"
 		/>
 
